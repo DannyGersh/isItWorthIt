@@ -41,30 +41,40 @@
     flex-wrap:wrap;
   }
 
+  .upper{
+    border: 1px solid gray;
+    background-color: #DDD;
+    display: flex;
+    align-items: center;
+    width: 70%;
+  }
   .output {
-    flex-basis: calc(100% / 2);
-
-    text-align: center;
+    width: 100%;
+    border: 1px solid gray;
     font-size: 100px;
-    
     margin: 0%;
     padding: 0%;
   }
   .operators {
-    flex-basis: calc(100% / 4);
+    width: calc(100% / 4);
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
   .numbers {
-    flex-basis: calc(100% / 3);
+    width: calc(100% / 3);
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
   .sum {
-    flex-basis: 100%;
+    width: 100%;
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
+
+
   
 
 

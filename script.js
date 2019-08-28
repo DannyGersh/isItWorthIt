@@ -87,7 +87,7 @@ function updateStr(s){
             // convert string to apropriete format:
             {
             if( min < 60 ){
-                fin = min.toString() + 'm';
+                fin = min.toString() + ' mi';
             }
             else if ( min < 60 * 8 ){
                 var hou = Math.floor(min / 60);
@@ -102,21 +102,11 @@ function updateStr(s){
                 min = min.toString() + 'w';
             }
             }
-
-            str = '<p class="output" id="out_2">' + fin + '</p>';
-            tdElement = document.getElementById('out_2');
-            trElement = tdElement.parentNode;
-            trElement.removeChild(tdElement);
-            trElement.innerHTML = str + trElement.innerHTML;
+            document.getElementById('out_2').innerHTML = fin
         }
     } 
     
-    var str = '<p class="output" id="out_1">' + s + '</p>';
-    var tdElement = document.getElementById('out_1');
-    var trElement = tdElement.parentNode;
-    trElement.removeChild(tdElement);
-    trElement.innerHTML = str + trElement.innerHTML;
-
+    document.getElementById('out_1').innerHTML = s
     calcSizes();
 }
 
@@ -129,22 +119,24 @@ function updateStr(s){
 function calcSizes(){
 
     var height = document.documentElement.clientHeight
-    var rows = 8;
+    var rows = 11;
 
     var div = document.getElementById('container');
     var divs = div.getElementsByTagName('button');
     for (var i = 0; i < divs.length; i += 1) {
         divs[i].style.height = (height/rows-3).toString()+"px";
     }
-
-    div = document.getElementById('container');
+    
     divs = div.getElementsByTagName('p');
     for (var i = 0; i < divs.length; i += 1) {
-        divs[i].style.height = (height/rows*2-3).toString()+"px";
-        divs[i].textContent
+        divs[i].style.height = (height/rows*2).toString()+"px";
+        divs[i].style.fontSize = "70px";
         //divs[i].style.textAlign = "center";
     }
     
+    divs = div.getElementsByTagName('div');
+    divs[0].style.height = (height/rows-3).toString()+"px";
+    divs[0].style.width = "100%";
 }
 
 calcSizes()
