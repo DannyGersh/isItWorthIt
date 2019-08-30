@@ -2,6 +2,8 @@
 <widget version     = "1.0.0" >
 
   <name>Is it worth it ?</name>
+  
+  <icon src="icon.png" />
 
   <description>
       quickly convert prices to the amount of time you worked for them.
