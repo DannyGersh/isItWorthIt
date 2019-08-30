@@ -13,25 +13,25 @@
   .output {
     width: 100%;
     border: 1px solid gray;
-    font-size: 100px;
+    font-size: 3vw;
     margin: 0%;
     padding: 0%;
   }
   .operators {
     width: calc(100% / 4);
-    font-size: 70px;
+    font-size: 5vw;
     margin: 0%;
     padding: 0%;
   }
   .numbers {
     width: calc(100% / 3);
-    font-size: 70px;
+    font-size: 5vw;
     margin: 0%;
     padding: 0%;
   }
   .sum {
     width: 100%;
-    font-size: 70px;
+    font-size: 5vw;
     margin: 0%;
     padding: 0%;
   }
