@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget version     = "1.0.0" >
+
+  <name>Is it worth it ?</name>
+
+  <description>
+      quickly convert prices to the amount of time you worked for them.
+  </description>
+
+  <author>
+      Danny Gersh
+  </author>
+
+</widget>
