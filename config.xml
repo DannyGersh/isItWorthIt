@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget version     = "1.0.0" >
+<widget version     = "1.0.1" >
 
-  <name>Is it worth it ?</name>
+  <name>Is it worth iT ?</name>
   
   <icon src="icon.png" />
 
