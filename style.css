@@ -8,8 +8,8 @@
     background-color: #DDD;
     display: flex;
     align-items: center;
-    width: 70%;
   }
+
   .output {
     width: 100%;
     border: 1px solid gray;
@@ -35,6 +35,11 @@
     margin: 0%;
     padding: 0%;
   }
+  .stats{
+    width: calc(100% / 2);
+    font-size: 3vw;
+  } 
+  
 
 
   
