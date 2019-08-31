@@ -8,38 +8,33 @@
     background-color: #DDD;
     display: flex;
     align-items: center;
+    width: 70%;
   }
-
   .output {
     width: 100%;
     border: 1px solid gray;
-    font-size: 3vw;
+    font-size: 100px;
     margin: 0%;
     padding: 0%;
   }
   .operators {
     width: calc(100% / 4);
-    font-size: 5vw;
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
   .numbers {
     width: calc(100% / 3);
-    font-size: 5vw;
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
   .sum {
     width: 100%;
-    font-size: 5vw;
+    font-size: 70px;
     margin: 0%;
     padding: 0%;
   }
-  .stats{
-    width: calc(100% / 2);
-    font-size: 3vw;
-  } 
-  
 
 
   

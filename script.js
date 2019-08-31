@@ -3,7 +3,8 @@
 var string = "";
 var wage = 30;
 var ratio =  60 / wage;
-var Howers_per_day = 8;
+
+
 
 
 function addString(s){
@@ -11,8 +12,7 @@ function addString(s){
 
         case "clear":
             string = "";
-            document.getElementById('out_1').innerHTML = "";
-            document.getElementById('out_2').innerHTML = "";
+            updateStr(string)
             // console.log(string)
             break;
 
@@ -82,40 +82,24 @@ function updateStr(s){
             s.slice(-1) != "+" 
             )
         {
-
             var min = eval(s) * ratio;
             var fin;
-
-            var ho = 60;
-            var da = Howers_per_day * ho;
-            var we = da * 7;
-            var mo = da * 30;
-            var ye = da * 365;
-
             // convert string to apropriete format:
             {
             if( min < 60 ){
-                fin = min.toFixed(1).toString() + ' minutes';
+                fin = min.toString() + ' mi';
             }
-            else if ( min < 60 * Howers_per_day ){
+            else if ( min < 60 * 8 ){
                 var hou = Math.floor(min / 60);
-                fin = hou.toString() + ' howers ' + '<br />' + (min % 60).toFixed(1).toString() + ' minutes';
+                fin = hou.toString() + ' Ho, ' + (min%60).toString() + ' Mi';
             }
-            else if ( min < 60 * Howers_per_day * 7 ){
-                var day = Math.floor(min / (60 * Howers_per_day));
-                fin = day.toString() + ' days ' + '<br />' + (min / 60 % Howers_per_day).toFixed(1).toString() + ' howers';
+            else if ( min < 60 * 8 * 7 ){
+                var day = Math.floor(min / (60 * 8));
+                fin = day.toString() + ' Da, ' + (min / 60 % 8).toString() + ' Ho';
             }
-            else if ( min < 60 * Howers_per_day * 30 ){
-                var week = Math.floor(min / (60 * Howers_per_day * 7))
-                fin = week.toString() + ' weeks ' + '<br />' + (min / 60 / Howers_per_day % 7).toFixed(1).toString() + ' days';
-            }
-            else if( min < ye){
-                var month = Math.floor(min / mo);
-                fin = month.toString() + ' months ' + '<br />' + (min % mo / we).toFixed(1).toString() + ' weeks';
-            }
-            else{
-                var year = Math.floor(min / ye);
-                fin = year.toString() + ' years ' + '<br />' + (min % ye / mo).toFixed(1).toString() + ' months';
+            else if ( min < 60 * 8 * 32 ){
+                min /= (60 * 8 * 7);
+                min = min.toString() + 'w';
             }
             }
             document.getElementById('out_2').innerHTML = fin
@@ -128,25 +112,6 @@ function updateStr(s){
 
 
 
-function stats(option) {
-    if(option=='R'){
-        wage = prompt("how much money do you earn for a hower of work ?"); 
-        ratio = 60 / parseInt(wage);
-        document.getElementById("Revenue").innerHTML = "Revenue: " + wage;
-        string = "";
-        document.getElementById("out_1").innerHTML = "";
-        document.getElementById("out_2").innerHTML = "";
-    }
-    if(option=='H'){
-        Howers_per_day = prompt("how much howers do you work each day ?", ""); 
-        ratio = 60 / parseInt(wage);
-        document.getElementById("Howers per day").innerHTML = "Howers per day: " + Howers_per_day;
-        string = "";
-        document.getElementById("out_1").innerHTML = "";
-        document.getElementById("out_2").innerHTML = "";
-    }
-}
-
 
 
 
@@ -154,7 +119,7 @@ function stats(option) {
 function calcSizes(){
 
     var height = document.documentElement.clientHeight
-    var rows = 12;
+    var rows = 11;
 
     var div = document.getElementById('container');
     var divs = div.getElementsByTagName('button');
