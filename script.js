@@ -1,9 +1,43 @@
-
-
+var wage = 0;
+var Howers_per_day = 0;
+var ratio =  0;
 var string = "";
-var wage = 30;
-var ratio =  60 / wage;
-var Howers_per_day = 8;
+
+function OnStart(){
+    if(localStorage.getItem("wage")){
+        wage = localStorage.getItem("wage");
+        document.getElementById('Revenue').value = 'Revenue: ' + wage;
+    }
+    else{
+        localStorage.setItem("wage", "30");
+        wage = 30;
+    }
+    if(localStorage.getItem("Howers_per_day")){
+        Howers_per_day = localStorage.getItem("Howers_per_day");
+        document.getElementById('Howers_per_day').value = 'Howers per day: ' + Howers_per_day.toString();
+    }
+    else{
+        localStorage.setItem("Howers_per_day", "8");
+        Howers_per_day = 8;
+    }
+    ratio =  60 / wage;
+
+    calcSizes()
+}
+OnStart();
+
+
+
+function stats(s){
+    if(s == 'Revenue'){
+        localStorage.setItem("stats", "Revenue");
+    }
+    else if(s == 'Howers_per_day'){
+        localStorage.setItem("stats", "Howers_per_day");
+    }
+
+    location.href='./test/test.html'
+}
 
 
 function addString(s){
@@ -71,8 +105,6 @@ function addString(s){
 }
 
 
-
-
 function updateStr(s){
     if( s.length != 0 ){
         if( 
@@ -127,30 +159,6 @@ function updateStr(s){
 }
 
 
-
-function stats(option) {
-    if(option=='R'){
-        wage = prompt("how much money do you earn for a hower of work ?"); 
-        ratio = 60 / parseInt(wage);
-        document.getElementById("Revenue").innerHTML = "Revenue: " + wage;
-        string = "";
-        document.getElementById("out_1").innerHTML = "";
-        document.getElementById("out_2").innerHTML = "";
-    }
-    if(option=='H'){
-        Howers_per_day = prompt("how much howers do you work each day ?", ""); 
-        ratio = 60 / parseInt(wage);
-        document.getElementById("Howers per day").innerHTML = "Howers per day: " + Howers_per_day;
-        string = "";
-        document.getElementById("out_1").innerHTML = "";
-        document.getElementById("out_2").innerHTML = "";
-    }
-}
-
-
-
-
-
 function calcSizes(){
 
     var height = document.documentElement.clientHeight
@@ -166,7 +174,12 @@ function calcSizes(){
     for (var i = 0; i < divs.length; i += 1) {
         divs[i].style.height = (height/rows*2).toString()+"px";
         divs[i].style.fontSize = "5vw";
-        //divs[i].style.textAlign = "center";
+    }
+
+    divs = div.getElementsByTagName('input');
+    for (var i = 0; i < divs.length; i += 1) {
+        divs[i].style.height = (height/rows).toString()+"px";
+        divs[i].style.fontSize = "5vw";
     }
     
     divs = div.getElementsByTagName('div');
@@ -174,4 +187,4 @@ function calcSizes(){
     divs[0].style.width = "100%";
 }
 
-calcSizes()
+
